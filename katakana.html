@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弁護士法人クラフ東京国際特許法律事務所 回答書</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #ddd;
+            --shadow: 0 2px 5px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: min(90%, 1000px);
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .tab-container {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow);
+            z-index: 100;
+            width: 100%;
+        }
+        
+        .tabs {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .tabs::-webkit-scrollbar-thumb {
+            background-color: var(--border-color);
+            border-radius: 4px;
+        }
+        
+        .tab {
+            padding: 0.75rem 1.25rem;
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .tab:hover:not(.active) {
+            background-color: #e9ecef;
+        }
+        
+        .content-section {
+            display: none;
+            padding: 1.5rem 0;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.25rem);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.25rem, 4vw, 1.75rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+        
+        .collapsible {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .collapsible-header {
+            padding: 1rem;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .collapsible-header::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        
+        .collapsible.collapsed .collapsible-header::after {
+            transform: rotate(-90deg);
+        }
+        
+        .collapsible-content {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            background-color: white;
+        }
+        
+        .collapsible.collapsed .collapsible-content {
+            display: none;
+        }
+        
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            height: 300px;
+            position: relative;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem auto;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .image-gallery img {
+            width: 100%;
+            object-fit: cover;
+            margin: 0;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 0.2em;
+            border-radius: 2px;
+        }
+        
+        .inquiry-list {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .inquiry-list li {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.75rem;
+            }
+            
+            .tab {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tabs">
+            <div class="tab active" data-tab="summary">概要</div>
+            <div class="tab" data-tab="response">回答書</div>
+            <div class="tab" data-tab="inquiry">照会事項</div>
+            <div class="tab" data-tab="attachments">添付資料</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div id="summary" class="content-section active">
+            <h1>弁護士法人クラフ東京国際特許法律事務所 回答書 概要</h1>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">主要ポイント</div>
+                <div class="collapsible-content">
+                    <p>ホンブンショハ、2025ネン3ガツ27ニチヅケツウコクショニタイスルカイトウショデアリ、モトジュウギョウイン（トクワキシ）のコキャクジョウホウリヨウニカンスルホウテキケンカイトジジツカンケイヲシメシテイマス。</p>
+                    <p>オモナソウテンハイカノトオリデス：</p>
+                    <ul>
+                        <li>コキャクジョウホウノエイギョウヒミツセイトムダンリヨウノキンシ</li>
+                        <li>モトジュウギョウインニヨルコキャクヘノエイギョウカツドウノウム</li>
+                        <li>トクテイノメイシノコウフトヒッセキノカクニン</li>
+                        <li>ケイヤクカイヤクニカンスルフンソウトゲンザイノケイソウジョウキョウ</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">重要な事実関係</div>
+                <div class="collapsible-content">
+                    <p>トクワキシガタントウシテイタコキャクカラ「トチュウデケイヤクヲカイヤクデキル」トノセツメイヲウケタトノモウシデガアリ、ゲンザイサイバンショニケイゾクチュウノアンケントナッテイマス。</p>
+                    <p>モンダイトナッテイルメイシノヒッセキガトクワキシニコクジシテイルコトカラ、コキャクニタイシテチョウサヲオコナッテイルジョウキョウデス。</p>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">照会事項の焦点</div>
+                <div class="collapsible-content">
+                    <p>ショウカイジコウハオモニイカノテンニショウテンヲアテテイマス：</p>
+                    <ul>
+                        <li>トクワキシニヨルトクテイメイシノコウフジジツ</li>
+                        <li>メイシノヒッセキノカクニン</li>
+                        <li>メイシコウフノケイイトタイショウシャ</li>
+                        <li>タイショクゴノコキャクヘノエイギョウカツドウ</li>
+                        <li>ケイヤクヘンコウノウムトタイショウジギョウシャ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="response" class="content-section">
+            <h1>回答書</h1>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">回答書本文</div>
+                <div class="collapsible-content">
+                    <p>2025ネン3ガツ27ニチヅケツウコクショニツイテ、イカノトオリゴカイトウイタシマス。</p>
+                    
+                    <p>トウシャノコキャクジョウホウニツイテハ、トウシャノエイギョウヒミツデアリ、タイショクシャヲフクメテトウシャノショウダクノナイリヨウハユルサレマセン。</p>
+                    
+                    <p>ソノタメ、トウシャガコキャクニタイシテ、モトジュウギョウインカラノエイギョウカツドウノウムトウヲカクニンスルコトハ、トウシャノセイトウナジギョウカツドウデス。マタ、ソノシュダンモソウトウナハンイナイデノカクニンヲオコナッテイマスノデ、キショクノシュチョウハシットウデス。</p>
+                    
+                    <p>タホウデ、トウシャハ、トクワキ（タケムラ）ショウシ（イカトクワキシトイイマス。）ガタントウシテイタコキャクニタイシテテイキチョウサヲオコナッテイマスガ、ソレハツギノジジョウニヨルモノデス。</p>
+                    
+                    <p>スナワチ、トクワキシガトウシャザイセキチュウニタントウシ、ドウキカンチュウニセイヤクシタコキャクカラ、ケイヤクテイケツジニオイテ、トクワキシカラ、「トチュウデケイヤクヲカイヤクデキル」トウトノセツメイヲウケ、ベッシメイシノコウフヲウケテイルノデカイヤクシタイトノオモウシデガアリマシタ。シカルニ、トウシャデコノヨウナトチュウカイヤクヲミトメルコトハアリマセンデシタタメ、ゲンザイ、ドウケンハフンソウアンケントシテサイバンショニケイゾクシテイマス。</p>
+                    
+                    <p>コレニカンレンシ、ベッシメイシノヒッセキハトクワキシニコクジシテイタコトモアリ、オキャクサマニイッテイノチョウサヲオコナッテイマス。</p>
+                    
+                    <p>ナオ、ゲンザイケイソウチュウノアンケンモアリ、ベッシショウカイジコウニゴカイトウイタダキタクゾンジマス。ベッシショウカイジコウニチョクセツゴキニュウノウエ、ドウフウノヘンシンヨウフトウデゴヘンソウイタダキマスヨウ、オネガイイタシマス。</p>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">数式表現</div>
+                <div class="collapsible-content">
+                    <p>文書中には以下のような数式表現が含まれていました：</p>
+                    <p>\(\phi\) - ファイ（数学記号）</p>
+                    <p>\(l_{v}\) - 下付き添え字付きの変数</p>
+                    <p>\(y_{s}\) - 下付き添え字付きの変数</p>
+                    <p>\(z>\) - 不等式</p>
+                    <p>\(l=\) - 等式</p>
+                    <p>\(4>0\) - 不等式</p>
+                    <p>\(\cos t>0\) - 三角関数を含む不等式</p>
+                    <p>\(h_{0}\) - 下付き添え字付きの変数</p>
+                    <p>\(0\pi r^{2}\) - 円の面積の数式</p>
+                    <p>\(v \cdot\) - ベクトル表記</p>
+                    <p>\(\textcircled{\scriptsize{1}}\) - 丸数字1</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="inquiry" class="content-section">
+            <h1>ご照会事項</h1>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">照会事項リスト</div>
+                <div class="collapsible-content">
+                    <ol class="inquiry-list">
+                        <li>トクワキシガ、ベッシメイシヲユウゲンガイシャインテリアツッミノダイヒョウシャ、ジュウギョウインナドドウシャノカンケイシャニコウフシタジジツハアリマスカ。</li>
+                        <li>ベッシメイシノジハトクワキシガキサイシタモノデスカ。</li>
+                        <li>トクワキシガベッシメイシヲユウゲンガイシャインテリアツッミノカンケイシャニコウフシテイタトシテ、ダレニコウフシマシタカ。マタドノヨウナケイイデコウフシマシタカ。</li>
+                        <li>トクワキシハ、ベッシメイシトドウナイヨウノメイシヲユウゲンガイシャインテリアツッミイガイニコウフシタジジツハアリマスカ。アルトスレバ、ソレハイツドコニコウフシマシタカ。</li>
+                        <li>トクワキシハ、ヘイシャヲタイショクゴ、ヘイシャノコキャクニエイギョウシタコトガアリマスカ。ソノケッカ、ヘイシャカラトクワキシショゾクノカイシャニケイヤクヲカエタジギョウシャハアリマスカ。アルトスレバソレハドコデスカ。</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">照会事項の背景</div>
+                <div class="collapsible-content">
+                    <p>コレラノショウカイジコウハ、モトジュウギョウインデアルトクワキシノコウドウニカンスルジジツカクニンヲモクテキトシテイマス。トクニイカノテンガショウテントナッテイマス：</p>
+                    <ul>
+                        <li>特定の名刺の交付事実と筆跡の確認</li>
+                        <li>顧客との接触状況と経緯</li>
+                        <li>退職後の営業活動と契約変更の有無</li>
+                    </ul>
+                    <p>コレラノジョウホウハゲンザイケイソウチュウノアンケンニカンレンシテオリ、ホウテキテツズキノイッカントシテショウカイサレテイマス。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="attachments" class="content-section">
+            <h1>添付資料</h1>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">添付画像</div>
+                <div class="collapsible-content">
+                    <div class="image-gallery">
+                        <img src="https://pub-cdn.sider.ai/u/U0Z6HZZ6611/file/51d701ae-aeec-49e6-b0f3-1c8178e615d1/0d4fddc5543c272032a47e91c76bb0d27b18778ebe6e611b15168ec0f1b04733.jpg" alt="添付資料1">
+                        <img src="https://pub-cdn.sider.ai/u/U0Z6HZZ6611/file/6798482a-a3da-4460-b3a4-8abbe1152714/468b5fc93ebb97cde366c1f037fa7749e0637c428fecc4c6c42cedc320b00723.jpg" alt="添付資料2">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <div class="collapsible-header">添付資料の説明</div>
+                <div class="collapsible-content">
+                    <p>ジョウキノガゾウハホンアンケンニカンレンスルテンプシリョウトシテテイシュツサレテイマス。コレラハショウカイジコウデゲンキュウサレテイル「ベッシメイシ」ニカンレンスルシリョウトカンガエラレマス。</p>
+                    <p>コレラノシリョウハ、トクワキシノコウドウニカンスルジジツカクニンオヨビゲンザイケイソウチュウノアンケンノショウコトシテジュウヨウナヤクワリヲハタスモノデス。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                // タブ切り替え機能
+                const tabs = document.querySelectorAll(".tab");
+                const contentSections = document.querySelectorAll(".content-section");
+                
+                tabs.forEach(tab => {
+                    tab.addEventListener("click", function() {
+                        const tabId = this.getAttribute("data-tab");
+                        
+                        // タブのアクティブ状態を更新
+                        tabs.forEach(t => t.classList.remove("active"));
+                        this.classList.add("active");
+                        
+                        // コンテンツセクションの表示を更新
+                        contentSections.forEach(section => {
+                            if (section.id === tabId) {
+                                section.classList.add("active");
+                            } else {
+                                section.classList.remove("active");
+                            }
+                        });
+                        
+                        // スクロールを上部に戻す
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+                    });
+                });
+                
+                // 折りたたみ機能
+                const collapsibles = document.querySelectorAll(".collapsible");
+                
+                collapsibles.forEach(collapsible => {
+                    const header = collapsible.querySelector(".collapsible-header");
+                    
+                    header.addEventListener("click", function() {
+                        const isCollapsed = collapsible.classList.contains("collapsed");
+                        
+                        if (isCollapsed) {
+                            collapsible.classList.remove("collapsed");
+                        } else {
+                            collapsible.classList.add("collapsed");
+                        }
+                    });
+                });
+                
+                // MathJaxの初期化
+                if (typeof MathJax !== "undefined") {
+                    MathJax.typesetPromise().catch(function(err) {
+                        console.error("MathJax初期化エラー:", err);
+                    });
+                }
+                
+            } catch (error) {
+                console.error("初期化エラー:", error);
+            }
+        });
+        
+        // ウィンドウリサイズ時の処理
+        window.addEventListener("resize", function() {
+            try {
+                // リサイズ時の追加処理があればここに記述
+            } catch (error) {
+                console.error("リサイズ処理エラー:", error);
+            }
+        });
+    </script>
+</body>
+</html>
